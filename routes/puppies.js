@@ -5,13 +5,13 @@ console.log("HEY ######!!!!!!!!!!!!!!!!!!");
 
 router.get('/new', function(req, res) {
     console.log("puppies new!")
-    res.render('site/new');
+    res.render('puppies/new');
 });
 
 /**
 Get the stuff back
 */
-router.post('/puppies', function(req, res) {
+router.post('/', function(req, res) {
     var age = Number(req.body.age);
     var name = req.body.name;
     id += 1;
@@ -19,7 +19,7 @@ router.post('/puppies', function(req, res) {
     res.redirect('/')
 });
 
-router.get('/puppies/:id', function(req, res) {
+router.get('/:id', function(req, res) {
     // console.log(req.params.id)
     let inputID = Number(req.params.id)
     let pupOfInterest = puppies.filter(function(pupObj) {
