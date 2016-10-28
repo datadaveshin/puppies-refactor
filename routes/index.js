@@ -1,20 +1,8 @@
-var express = require('express');
-var router = express.Router();
+"use strict";
+var statics = require('./statics');
+var puppies = require('./puppies');
 
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('site/index', { title: 'Express' });
-});
-
-//What to display in localhost:8000/about
-router.get('/about', function(req, res){
- res.render('site/about');
-});
-
-//What to display in localhost:8000/contact
-router.get('/contact', function(req, res){
- res.render('site/contact');
-});
-
-module.exports = router;
+module.exports = {      // This is the object that app.js is going to pull in
+    statics: statics,
+    puppies: puppies
+};
