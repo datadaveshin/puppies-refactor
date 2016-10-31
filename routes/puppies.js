@@ -37,7 +37,8 @@ router.get('/:id', function(req, res) {
     });
     pupOfInterest = pupOfInterest[0];
     console.log('pupOfInterest', pupOfInterest)
-    res.send(pupOfInterest.name)
+    res.render('puppies/individual', {puppy: pupOfInterest})
+    // res.send(pupOfInterest.name)
 });
 
 module.exports = {

@@ -8,8 +8,7 @@ a {
     color: #00B7FF;
 }
 
-h1 {
-    color: magenta;
+h1, h2 {
     font-size: 80;
     animation-name: flash;
     animation-duration: 0.2s;
@@ -18,6 +17,11 @@ h1 {
     animation-direction: alternate;
     animation-play-state: running;
     text-align: center;
+}
+
+h2 {
+    font-size: 60;
+    animation-duration: 0.4s;
 }
 
 @keyframes flash {

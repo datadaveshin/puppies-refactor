@@ -1,0 +1,23 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        style 
+            include ../../public/stylesheets/style.css        
+        title Daisy Hill
+    body
+        h1 Meet your puppy!!!
+        //- p= JSON.stringify(puppies)
+        //- p= puppies
+        h2= puppy.name + ", your  " + puppy.age + " year old puppy!!"
+        
+        p: #[span To add a puppy go to the] #[a(href="../puppies/new") submission] #[span page]
+
+        p
+            | For more information:  
+        p
+            a(href='../../about') About
+        p
+            a(href='../../contact') Contact
