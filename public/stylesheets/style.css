@@ -9,7 +9,7 @@ a {
 }
 
 h1, h2 {
-    font-size: 80;
+    font-size: 120;
     animation-name: flash;
     animation-duration: 0.2s;
     animation-timing-function: linear;
