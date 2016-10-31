@@ -1,15 +1,25 @@
-//- extends layout
-//- 
-//- block content
-//-   h1= title
-//-   p Welcome to #{title}
 doctype html
 html(lang='en')
     head
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         meta(http-equiv='X-UA-Compatible', content='ie=edge')
-        title Document
+        style 
+            include ../../public/stylesheets/style.css        
+        title Daisy Hill
     body
-        p This is the index page
-        #{puppies}
+        h1 Puppy Inventory
+        //- p= JSON.stringify(puppies)
+        //- p= puppies
+        ul Current List:
+        - each pup in puppies
+            li="Puppy #" + pup.id + ": " + pup.name + " is " + pup.age + " years old!!"
+        
+        p: #[span To add a puppy go to the] #[a(href="../puppies/new") submission] #[span page]
+
+        p
+            | For more information:  
+        p
+            a(href='../../about') About
+        p
+            a(href='../../contact') Contact

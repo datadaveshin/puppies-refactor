@@ -4,7 +4,16 @@ html(lang='en')
         meta(charset='UTF-8')
         meta(name='viewport', content='width=device-width, initial-scale=1.0')
         meta(http-equiv='X-UA-Compatible', content='ie=edge')
+        style 
+            include ../../public/stylesheets/style.css   
         title Document
     body
-        h1 This is about saving the dogs
-        p I got help from Big Rob and Jeremy on this project
+        h1 This is about saving the dogs!
+
+        p: #[span To add a puppy go to the] #[a(href="../puppies/new") submission] #[span page]
+        p
+            | For more information:  
+        p
+            a(href='../../about') About
+        p
+            a(href='../../contact') Contact

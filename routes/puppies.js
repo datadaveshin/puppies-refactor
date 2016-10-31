@@ -15,10 +15,12 @@ router.get('/new', function(req, res) {
 Get the stuff back
 */
 
+var id = 1;
 router.post('/', function(req, res) {
     var age = Number(req.body.age);
     var name = req.body.name;
-    var newPup = new models.Puppy(name, age);
+    id += 1;
+    var newPup = new models.Puppy(name, age, id);
     models.pupArray.push(newPup)
     console.log('pupArray', models.pupArray)
     // puppies.push({'name': name, 'age': age, 'id': id})
@@ -29,7 +31,8 @@ router.post('/', function(req, res) {
 router.get('/:id', function(req, res) {
     // console.log(req.params.id)
     let inputID = Number(req.params.id)
-    let pupOfInterest = puppies.filter(function(pupObj) {
+    // let pupOfInterest = puppies.filter(function(pupObj) {
+    let pupOfInterest = models.pupArray.filter(function(pupObj) {
         return (inputID === pupObj.id);
     });
     pupOfInterest = pupOfInterest[0];

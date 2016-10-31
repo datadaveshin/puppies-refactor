@@ -1,8 +1,36 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: yellow;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+h1 {
+    color: magenta;
+    font-size: 80;
+    animation-name: flash;
+    animation-duration: 0.2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    text-align: center;
+}
+
+@keyframes flash {
+    from {color: magenta;}
+    to {color: green;}
+}
+
+ul, li {
+    color: blue;
+    font-size: 60;
+    text-align: center;
+}
+
+p {
+    text-align: center;
 }
