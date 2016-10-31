@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var models = require("../models/puppy")
 
+console.log("models", models)
 console.log("HEY ######!!!!!!!!!!!!!!!!!!");
 
 router.get('/new', function(req, res) {
@@ -8,15 +10,20 @@ router.get('/new', function(req, res) {
     res.render('puppies/new');
 });
 
+
 /**
 Get the stuff back
 */
+
 router.post('/', function(req, res) {
     var age = Number(req.body.age);
     var name = req.body.name;
-    id += 1;
-    puppies.push({'name': name, 'age': age, 'id': id})
+    var newPup = new models.Puppy(name, age);
+    models.pupArray.push(newPup)
+    console.log('pupArray', models.pupArray)
+    // puppies.push({'name': name, 'age': age, 'id': id})
     res.redirect('/')
+    // res.send(models.pupArray)
 });
 
 router.get('/:id', function(req, res) {
@@ -30,4 +37,8 @@ router.get('/:id', function(req, res) {
     res.send(pupOfInterest.name)
 });
 
-module.exports = router;
+module.exports = {
+    router: router,
+    puppies: models
+}
+// module.exports = router;

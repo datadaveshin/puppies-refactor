@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var models = require("../models/puppy")
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('site/index', { title: 'Express' });
+  res.render('site/index', { title: 'Express', puppies: models.pupArray });
 });
 
 //What to display in localhost:8000/about
